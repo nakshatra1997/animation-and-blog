@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: grey;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: black;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+window.alert("nakshtrapradhan's first animation");
+function myMove() {
+  var elem = document.getElementById("myAnimation");
+  var pos = 0;
+  var pos1 = 350;
+ var wid1=350;
+  var wid = 0;
+  
+  
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350 && wid!=350) {
+       wid++;
+	    elem.style.left=wid+'px';	
+	   }
+	else if(wid==350&&pos1!=0)
+	   {pos1--;
+	   elem.style.top=pos1+'px';
+	   }
+    else {
+      pos++;
+      elem.style.top = pos + 'px';    
+    }
+	if(wid==350&&pos1==0)
+	{clearInterval(id);}
+	
+  }
+}
+</script>
+
+</body>
+</html>
+
